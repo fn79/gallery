@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<form action="" method="POST" >
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Submit">
+</form>
+
+<h2>{{paint.title}}</h2>
+<h7>{{request_user.id}}</h7>
+<h6>{{paint.content}}</h6>
+
+{% endblock %}

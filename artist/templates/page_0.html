@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    {% for obj in artist %}
+        <h2>{{obj.title}}</h2>
+        {% if obj.image %}
+            <img src="{{obj.image.url}}" height="300" >
+        {% endif %}
+        <h6>{{obj.content}}</h6>
+        <hr>
+    {% endfor %}
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{user_form}}
+        <input type="submit" value="Signup">
+    </form>
+
+{% endblock %}
+
+<hr>
+
+{% block content_1 %}
+    
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if user.is_authenticated %}
+        {{user.first_name}} {{user.last_name}}
+    {% endif %}
+
+    {% endblock %}

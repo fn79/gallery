@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block content_1 %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <label class="form-label">Username:</label>
+    <input class="form-control" type="text" name="username" >
+    <label class="form-label">Password:</label>
+    <input class="form-control" type="password" name="password" >
+    <input class="btn btn-primary mt-3" type="submit" value="Submit" >
+</form>
+{% endblock %}
